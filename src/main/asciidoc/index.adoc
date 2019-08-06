@@ -1,0 +1,11 @@
+include::{docdir}/_attributes.adoc[]
+= Bluesky Github IO
+:toc!:
+
+****
+
+****
+
+[horizontal]
+link:bluesky-docs/[reference] :: docs
+link:blueskyKotlinStudy/[reference] :: Kotlin Study
