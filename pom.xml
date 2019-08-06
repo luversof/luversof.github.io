@@ -50,7 +50,7 @@
 							<backend>html5</backend>
 							<sourceHighlighter>coderay</sourceHighlighter>
 							<preserveDirectories>true</preserveDirectories>
-							<outputDirectory>docs</outputDirectory>
+							<outputDirectory>.</outputDirectory>
 							<attributes>
 								<java-version>${java.version}</java-version>
 								<spring-restdocs-version>${spring-restdocs.version}</spring-restdocs-version>
