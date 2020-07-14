@@ -8,17 +8,27 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.4.RELEASE</version>
+		<version>2.3.1.RELEASE</version>
 	</parent>
 	<properties>
 		<java.version>11</java.version>
-		<asciidoctor.maven.plugin.version>1.5.8</asciidoctor.maven.plugin.version>
+		<asciidoctor.maven.plugin.version>1.6.0</asciidoctor.maven.plugin.version>
+		<spring-doc-resources.version>0.2.2.RELEASE</spring-doc-resources.version>
+		<refdocs.build.directory>${project.build.directory}/refdocs/</refdocs.build.directory>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.spring.docresources</groupId>
+			<artifactId>spring-doc-resources</artifactId>
+			<version>${spring-doc-resources.version}</version>
+			<type>zip</type>
+			<optional>true</optional>
 		</dependency>
 	</dependencies>
 
@@ -27,6 +37,51 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>unpack-doc-resources</id>
+						<goals>
+							<goal>unpack-dependencies</goal>
+						</goals>
+						<phase>generate-resources</phase>
+						<configuration>
+							<includeGroupIds>io.spring.docresources</includeGroupIds>
+							<includeArtifactIds>spring-doc-resources</includeArtifactIds>
+							<includeTypes>zip</includeTypes>
+							<excludeTransitive>true</excludeTransitive>
+							<outputDirectory>${refdocs.build.directory}</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-asciidoc-resources</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${refdocs.build.directory}</outputDirectory>
+							<resources>
+								<resource>
+									<directory>src/main/asciidoc</directory>
+									<filtering>false</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+				<configuration>
+					<sourceDirectory>${refdocs.build.directory}</sourceDirectory>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.asciidoctor</groupId>
@@ -47,11 +102,21 @@
 							<goal>process-asciidoc</goal>
 						</goals>
 						<configuration>
+							<sourceDirectory>${refdocs.build.directory}</sourceDirectory>
 							<backend>html5</backend>
-							<sourceHighlighter>coderay</sourceHighlighter>
+							<sourceHighlighter>highlight.js</sourceHighlighter>
 							<preserveDirectories>true</preserveDirectories>
-							<outputDirectory>.</outputDirectory>
+							<!-- <outputDirectory>.</outputDirectory> -->
 							<attributes>
+								// these attributes are required to use the doc resources
+								<docinfo>shared</docinfo>
+								<stylesdir>css/</stylesdir>
+								<stylesheet>spring.css</stylesheet>
+								<linkcss>true</linkcss>
+								<icons>font</icons>
+								<highlightjsdir>js/highlight</highlightjsdir>
+								<highlightjs-theme>github</highlightjs-theme>
+								
 								<java-version>${java.version}</java-version>
 								<spring-restdocs-version>${spring-restdocs.version}</spring-restdocs-version>
 								<spring-cloud-data-flow-version>2.2.0.RELEASE</spring-cloud-data-flow-version>
@@ -63,4 +128,22 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<repositories>
+		<repository>
+			<id>spring-snapshots</id>
+			<url>http://repo.spring.io/snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>spring-milestones</id>
+			<url>http://repo.spring.io/milestone</url>
+		</repository>
+		<repository>
+			<id>spring-releases</id>
+			<url>https://repo.spring.io/release</url>
+		</repository>
+	</repositories>
 </project>
