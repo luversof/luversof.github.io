@@ -1,0 +1,164 @@
+[
+  {
+    "category": "weapon",
+    "categoryKo": "무기",
+    "parentCategory": null
+  },
+  {
+    "category": "melee weapon",
+    "categoryKo": "근접 무기",
+    "parentCategory": "weapon"
+  },
+  {
+    "category": "ranged weapon",
+    "categoryKo": "원거리 무기",
+    "parentCategory": "weapon"
+  },
+  {
+    "category": "axe",
+    "categoryKo": "도끼",
+    "parentCategory": "melee weapon"
+  },
+  {
+    "category": "bow",
+    "categoryKo": "활",
+    "parentCategory": "ranged weapon"
+  },
+  {
+    "category": "crossbow",
+    "categoryKo": "쇠뇌",
+    "parentCategory": "ranged weapon"
+  },
+  {
+    "category": "dagger",
+    "categoryKo": "단도",
+    "parentCategory": "melee weapon"
+  },
+  {
+    "category": "javelin",
+    "categoryKo": "투창",
+    "parentCategory": "weapon"
+  },
+  {
+    "category": "katar",
+    "categoryKo": "손톱",
+    "parentCategory": "melee weapon"
+  },
+  {
+    "category": "mace",
+    "categoryKo": "철퇴",
+    "parentCategory": "melee weapon"
+  },
+  {
+    "category": "hammer",
+    "categoryKo": "철퇴 (hammer)",
+    "parentCategory": "mace"
+  },
+  {
+    "category": "club",
+    "categoryKo": "철퇴 (club)",
+    "parentCategory": "mace"
+  },
+  {
+    "category": "scepter",
+    "categoryKo": "철퇴 (scepter)",
+    "parentCategory": "melee weapon"
+  },
+
+  {
+    "category": "polearm",
+    "categoryKo": "미늘창",
+    "parentCategory": "melee weapon"
+  },
+  {
+    "category": "spear",
+    "categoryKo": "창",
+    "parentCategory": "melee weapon"
+  },
+  {
+    "category": "staff",
+    "categoryKo": "지팡이",
+    "parentCategory": "weapon"
+  },
+  {
+    "category": "orb",
+    "categoryKo": "지팡이 (orb)",
+    "parentCategory": "weapon"
+  },
+  {
+    "category": "wand",
+    "categoryKo": "지팡이 (wand)",
+    "parentCategory": "weapon"
+  },
+  {
+    "category": "sword",
+    "categoryKo": "도검",
+    "parentCategory": "melee weapon"
+  },
+  {
+    "category": "throwing",
+    "categoryKo": "창",
+    "parentCategory": "melee weapon"
+  },
+
+  {
+    "category": "armor",
+    "categoryKo": "방어구",
+    "parentCategory": null
+  },
+  {
+    "category": "helm",
+    "categoryKo": "투구",
+    "parentCategory": "armor"
+  },
+  {
+    "category": "chest armor",
+    "categoryKo": "갑옷",
+    "parentCategory": "armor"
+  },
+  {
+    "category": "belt",
+    "categoryKo": "허리띠",
+    "parentCategory": "armor"
+  },
+  {
+    "category": "boots",
+    "categoryKo": "신발",
+    "parentCategory": "armor"
+  },
+  {
+    "category": "gloves",
+    "categoryKo": "장갑",
+    "parentCategory": "armor"
+  },
+  {
+    "category": "shield",
+    "categoryKo": "방패",
+    "parentCategory": "armor"
+  },
+  {
+    "category": "paladin shield",
+    "categoryKo": "성기사 전용 방패",
+    "parentCategory": "shield"
+  },
+  {
+    "category": "shrunken head",
+    "categoryKo": "방패 (네크 전용)",
+    "parentCategory": "shield"
+  },
+  {
+    "category": "accessory",
+    "categoryKo": "장신구",
+    "parentCategory": null
+  },
+  {
+    "category": "amulet",
+    "categoryKo": "목걸이",
+    "parentCategory": "accessory"
+  },
+  {
+    "category": "ring",
+    "categoryKo": "반지",
+    "parentCategory": "accessory"
+  }
+]

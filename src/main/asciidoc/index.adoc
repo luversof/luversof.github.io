@@ -3,9 +3,12 @@ include::{docdir}/_attributes.adoc[]
 :toc!:
 
 ****
-test
+심심해서 만들어보는 github 홈페이지
 ****
 
 [horizontal]
 link:bluesky-docs/[reference] :: docs
 link:blueskyKotlinStudy/[reference] :: Kotlin Study
+
+[horizontal]
+link:diablo2/[diablo2] :: diablo2 아이템 정보 정리한 페이지
