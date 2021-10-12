@@ -1,2 +1,2 @@
 (window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d230433"],{ec10:function(l,i,e){"use strict";e.r(i);var n=e("7a23"),u=Object(n["h"])("<h1>Release Note</h1><h2>2021-10-12</h2><ul><li>룬워드 검색 - 소켓수 필터 추가</li></ul><h2>2021-10-11</h2><ul><li>룬워드 검색 - 키워드 검색 추가</li><li>룬워드 검색 - 아이템 카테고리 필터 추가</li></ul><h2>2021-10-09</h2><ul><li>최초 생성</li><li> 룬워드 검색 추가 </li><li>룬워드 검색 - 룬 필터 추가</li></ul>",7),t=[u];function c(l,i,e,u,c,h){return Object(n["t"])(),Object(n["f"])("div",null,t)}var h={},o=e("6b0d"),r=e.n(o);const a=r()(h,[["render",c]]);i["default"]=a}}]);
-//# sourceMappingURL=chunk-2d230433.9aec1405.js.map
+//# sourceMappingURL=chunk-2d230433.3c6e2944.js.map
